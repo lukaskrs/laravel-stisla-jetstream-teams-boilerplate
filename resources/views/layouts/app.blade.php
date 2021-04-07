@@ -38,7 +38,7 @@
                 <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
-                      <div class="section-header">
+                      <div class="section-header mb-0">
                         @isset($header_content)
                             {{ $header_content }}
                         @else
