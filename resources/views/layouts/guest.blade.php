@@ -8,10 +8,14 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
 
         <!-- Styles -->
+        {{--<link rel="stylesheet" href="{{ asset('vendor/bootstrap.min.css') }}">--}}
         <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
+        <link rel="stylesheet" href="{{ asset('stisla/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('stisla/css/components.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/notyf/notyf.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->

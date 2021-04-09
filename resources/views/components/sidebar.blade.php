@@ -1,25 +1,29 @@
 @php
-$links = [
+$links =
+[
     [
-        "href" => "dashboard",
-        "text" => "Dashboard",
-        "is_multi" => false,
+            "href" => "dashboard",
+            "text" => "Dashboard",
+            "is_multi" => false,
+            "icon" => 'user',
     ],
     [
         "href" => [
             [
                 "section_text" => "User",
-                "section_list" => [
-                    ["href" => "user", "text" => "Data User"],
+                "section_list" =>
+                [
+                    ["href" => "user", "text" => "List Users"],
                     ["href" => "user.create", "text" => "Create User"]
                 ]
             ]
         ],
         "text" => "User",
         "is_multi" => true,
+        "icon" => 'chart-bar', // FontAwesome icon
     ],
 ];
-$navigation_links = array_to_object($links);
+$navigation_links = json_decode(json_encode($links));
 @endphp
 
 <div class="main-sidebar">
@@ -37,27 +41,31 @@ $navigation_links = array_to_object($links);
             <li class="menu-header">{{ $link->text }}</li>
             @if (!$link->is_multi)
             <li class="{{ Request::routeIs($link->href) ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a class="nav-link" href="{{ route($link->href) }}">
+                    <i  class="fas fa-{{$link->icon}}"></i><span>Dashboard</span></a>
             </li>
             @else
-                @foreach ($link->href as $section)
-                    @php
-                    $routes = collect($section->section_list)->map(function ($child) {
-                        return Request::routeIs($child->href);
-                    })->toArray();
+            @foreach ($link->href as $section)
+            @php
+            $routes = collect($section->section_list)->map(function ($child) {
+            return Request::routeIs($child->href);
+            })->toArray();
 
-                    $is_active = in_array(true, $routes);
-                    @endphp
+            $is_active = in_array(true, $routes);
+            @endphp
 
-                    <li class="dropdown {{ ($is_active) ? 'active' : '' }}">
-                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chart-bar"></i> <span>{{ $section->section_text }}</span></a>
-                        <ul class="dropdown-menu">
-                            @foreach ($section->section_list as $child)
-                                <li class="{{ Request::routeIs($child->href) ? 'active' : '' }}"><a class="nav-link" href="{{ route($child->href) }}">{{ $child->text }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endforeach
+            <li class="dropdown {{ ($is_active) ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                    <i class="fas fa-{{$link->icon}}"></i>
+                    <span>{{ $section->section_text }}</span></a>
+                <ul class="dropdown-menu">
+                    @foreach ($section->section_list as $child)
+                    <li class="{{ Request::routeIs($child->href) ? 'active' : '' }}"><a class="nav-link"
+                            href="{{ route($child->href) }}">{{ $child->text }}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+            @endforeach
             @endif
         </ul>
         @endforeach

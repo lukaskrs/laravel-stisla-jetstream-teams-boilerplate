@@ -178,9 +178,9 @@ $(function() {
         }else{
           me.find('> a').attr('data-toggle', 'tooltip');
           me.find('> a').attr('data-original-title', me.find('> a').text());
-          $("[data-toggle='tooltip']").tooltip({
+          /* $("[data-toggle='tooltip']").tooltip({
             placement: 'right'
-          });
+          }); */
         }
       });
     }

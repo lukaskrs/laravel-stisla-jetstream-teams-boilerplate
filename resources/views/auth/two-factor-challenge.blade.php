@@ -18,14 +18,20 @@
             <form method="POST" action="/two-factor-challenge">
                 @csrf
 
-                <div class="mt-4" x-show="! recovery">
+                <div class="form-group col-span-6 sm:col-span-4 mt-4"
+                    x-show="! recovery">
                     <x-jet-label value="{{ __('Code') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="text" name="code" autofocus x-ref="code" autocomplete="one-time-code" />
+                    <x-jet-input
+                                     class="mt-1 "
+                                     type="text" name="code" autofocus x-ref="code" autocomplete="one-time-code" />
                 </div>
 
-                <div class="mt-4" x-show="recovery">
+                <div class="form-group col-span-6 sm:col-span-4 mt-4"
+                    x-show="recovery">
                     <x-jet-label value="{{ __('Recovery Code') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="text" name="recovery_code" x-ref="recovery_code" autocomplete="one-time-code" />
+                    <x-jet-input
+                    class="mt-1 "
+                    type="text" name="recovery_code" x-ref="recovery_code" autocomplete="one-time-code" />
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
