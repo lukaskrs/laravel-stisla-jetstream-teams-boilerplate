@@ -5,7 +5,7 @@ $links =
             "href" => "dashboard",
             "text" => "Dashboard",
             "is_multi" => false,
-            "icon" => 'user',
+            "icon" => 'tachometer-alt',
     ],
     [
         "href" => [
@@ -20,7 +20,7 @@ $links =
         ],
         "text" => "User",
         "is_multi" => true,
-        "icon" => 'chart-bar', // FontAwesome icon
+        "icon" => 'users', // FontAwesome icon
     ],
 ];
 $navigation_links = json_decode(json_encode($links));

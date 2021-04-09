@@ -32,13 +32,15 @@ $user = auth()->user();
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"  class="dropdown-item has-icon">
-                                        <i class="fas fa-cog"></i> {{ __('Team Settings') }}
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
+                                          class="dropdown-item has-icon">
+                                        <i class="fas fa-sitemap"></i> {{ __('Team Settings') }}
                                     </x-jet-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <x-jet-dropdown-link href="{{ route('teams.create') }}">
-                                              {{ __('Create New Team') }}
+                                        <x-jet-dropdown-link href="{{ route('teams.create') }}"
+                                        class="dropdown-item has-icon">
+                                            <i class="fas fa-plus"></i> {{ __('Create New Team') }}
                                         </x-jet-dropdown-link>
                                     @endcan
 
