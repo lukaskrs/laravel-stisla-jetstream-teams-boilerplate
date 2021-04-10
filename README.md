@@ -43,9 +43,9 @@ $ php artisan migrate
 ## How does it look?
 
 <p align="center">
-    <img src="https://lintasdigital.id/external-src/img/Dashboard.png" width="80%" height="auto" />
-    <img src="https://lintasdigital.id/external-src/img/Users.png" width="80%" height="auto" />
-    <img src="https://lintasdigital.id/external-src/img/Teams.png" width="80%" height="auto" />
-    <img src="https://lintasdigital.id/external-src/img/profile.png" width="80%" height="auto" />
+    <img src="https://lintasdigital.id/src/img/Dashboard.png" width="80%" height="auto" />
+    <img src="https://lintasdigital.id/src/img/Users.png" width="80%" height="auto" />
+    <img src="https://lintasdigital.id/src/img/Teams.png" width="80%" height="auto" />
+    <img src="https://lintasdigital.id/src/img/profile.png" width="80%" height="auto" />
 </p>
 
