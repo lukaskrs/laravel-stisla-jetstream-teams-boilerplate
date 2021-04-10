@@ -1,7 +1,7 @@
 # Laravel 8 + Stisla + Jetstream Teams + Livewire
 Combining Stisla Admin Template and Laravel 8 with Jetstream teams. Creating a ready admin template to kickstart your development.
 
-Based from [laravel-8-stisla-jetstream]https://github.com/nyancodeid/laravel-8-stisla-jetstream
+Based from [laravel-8-stisla-jetstream](https://github.com/nyancodeid/laravel-8-stisla-jetstream)
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/lukaskrs/laravel-stisla-jetstream-teams-boilerplate/issues)
 
